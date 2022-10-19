@@ -1,0 +1,66 @@
+<body class="d-flex flex-column h-100">
+
+	<div th:replace="~{fragments/header :: header}"></div>
+
+
+	<main role="main" class="flex-shrink-0">
+		<div class="container mt-5">
+			<div class="jumbotron">
+				<h1 class="display-4">Library Management System</h1>
+			</div>
+
+		</div>
+	</main>
+  <nav class="navbar navbar-expand-sm bg-light">  
+    <div class="container mt-9">  
+      <ul class="navbar-nav"> 
+        <li class="nav-item"> 
+          <h3>
+                    <a routerLink="product/home" class="nav-link" routerLinkActive="active">  
+                      Home  
+                    </a>  
+                    </h3>
+                  </li> 
+        <li class="nav-item">  
+          <h3>
+          <a routerLink="product/addBook" class="nav-link" routerLinkActive="active">  
+            Add Book 
+          </a> </h3> </li>
+
+        <li class="nav-item"> 
+          <h3>
+                    <a routerLink="product/updateBook" class="nav-link" routerLinkActive="active">  
+                      Update Book  
+                    </a>  
+                    </h3>
+                  </li> 
+                  <li class="nav-item"> 
+                    <h3>
+                              <a routerLink="product/removeBook" class="nav-link" routerLinkActive="active">  
+                                Remove Book  
+                              </a>  
+                              </h3>
+                            </li>
+                            <li class="nav-item"> 
+                              <h3>
+                                        <a routerLink="product/searchBook" class="nav-link" routerLinkActive="active">  
+                                          Search Book  
+                                        </a>  
+                                        </h3>
+                                      </li>      
+      </ul>  
+    </div>  
+  </nav>
+  
+    <router-outlet></router-outlet> 
+
+	<div th:replace="~{fragments/footer :: footer}"></div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+		crossorigin="anonymous">
+</script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+</body>

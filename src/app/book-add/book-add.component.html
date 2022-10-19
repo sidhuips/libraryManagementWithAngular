@@ -1,0 +1,35 @@
+<head>
+  <title>Add Book</title>
+</head>
+
+<div class="container"  >  
+  <div class="row"  *ngIf="showMsg">
+    <div class="col-xs-12">
+      <p class="alert alert-success">
+          <strong>Successfully added Book with ISBN: {{idToWork}}</strong>
+  
+      </p>
+    </div>
+  </div>
+  <div class="row"  *ngIf="isbnExist">
+    <div class="col-xs-12">
+      <p class="alert alert-warning">A book already exists with ISBN: {{idToWork}}</p>
+    </div>
+  </div>
+  <div class="card-body">  
+    <form [formGroup]="checkoutForm" (ngSubmit)="submitBook()">  
+      <div class="form-group">  
+        <label class="col-md-4">ISBN:*</label>  
+        <input type="text" class="form-control" path="id" id = "isbn" required="required" formControlName="id"/>
+        <span class="text-danger" *ngIf="idEmpty">Please fill out this field.<br></span>   
+        <label class="col-md-4">Book Name: </label>  
+        <input type="text" class="form-control" type="text" id="bookName" path="bookName" required="required" formControlName="bookName"/>
+        <label class="col-md-4">Author Name: </label>  
+        <input type="text" class="form-control" required="required" formControlName="author"/>
+        <label class="col-md-4">Book Type: </label>  
+        <input type="text" class="form-control" required="required" formControlName="type"/>
+      </div>
+      <input id = "submit" type="submit" value="submit"/>
+    </form>  
+  </div>  
+</div>  

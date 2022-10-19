@@ -1,0 +1,37 @@
+<head>
+    <title>Search Book</title>
+  </head>
+  
+  <div class="container"  >  
+    <div class="card-body">  
+      <form [formGroup]="checkoutForm" (ngSubmit)="searchBook()">  
+        <div class="form-group">  
+          <input type="text" class="form-control" type="text" id="searchString" path="bookName" required="required" formControlName="bookName"/>
+        </div>
+        <input id = "submit" type="submit" value="search"/>
+      </form>  
+    </div>  
+  </div>  
+
+  <div class="container">  
+    <div class="row"  *ngIf="showList">
+        <h1>Books Found</h1>
+        <table class="table table-striped" id = "searchResult">
+          <thead>
+              <tr>
+                      <th>ISBN</th>
+                      <th>Book Name</th>
+                      <th>Author</th>
+                      <th>Book Type</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let b of booksFound">
+              <td>{{ b.id }}</td>
+              <td>{{ b.bookName }}</td>
+              <td>{{ b.author }}</td>
+              <td>{{ b.type }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
