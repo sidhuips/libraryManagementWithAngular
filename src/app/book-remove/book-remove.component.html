@@ -1,0 +1,29 @@
+<head>
+    <title>Remove Book</title>
+  </head>
+  
+  <div class="container"  >  
+    <div class="row"  *ngIf="showMsg">
+      <div class="col-xs-12">
+        <p class="alert alert-success">
+            <strong>Successfully removed Book with ISBN: {{idToWork}}</strong>
+    
+        </p>
+      </div>
+    </div>
+    <div class="row"  *ngIf="noBookFound">
+      <div class="col-xs-12">
+        <p class="alert alert-warning">No book found with ISBN: {{idToWork}}</p>
+      </div>
+    </div>
+    <div class="card-body">  
+      <form [formGroup]="checkoutForm" (ngSubmit)="submitBook()">  
+        <div class="form-group">  
+          <label class="col-md-4">ISBN:*</label>  
+          <input type="text" class="form-control" path="id" id = "isbn" required="required" formControlName="id"/>
+          <span class="text-danger" *ngIf="idEmpty">Please fill out this field.<br></span>          
+        </div>
+        <input id = "submit" type="submit" value="submit"/>
+      </form>  
+    </div>  
+  </div>  
